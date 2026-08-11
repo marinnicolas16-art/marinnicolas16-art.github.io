@@ -288,6 +288,134 @@
     text-align:center; padding:36px 24px 50px; font-family:'IBM Plex Mono', monospace;
     font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:#7a7359;
   }
+
+  /* ===== PAGE 2: CV CARDS ===== */
+  .cv-cards{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-bottom:40px;
+  }
+  .cv-card{
+    border:2px solid var(--rule); border-radius:4px; overflow:hidden;
+    background:var(--parchment); display:flex; flex-direction:column;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .cv-card:hover{
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+  }
+  .cv-header{
+    background:var(--navy); color:var(--parchment); padding:16px 20px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .cv-lang{
+    font-family:'Spectral', serif; font-weight:600; font-size:1.1rem;
+  }
+  .cv-year{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.05em;
+    color:var(--gold-bright); text-transform:uppercase;
+  }
+  .cv-content{
+    padding:24px 20px; flex-grow:1;
+  }
+  .cv-content h3{
+    font-family:'Spectral', serif; font-weight:600; font-size:1.15rem;
+    color:var(--navy); margin:0 0 12px;
+  }
+  .cv-content p{
+    margin:0 0 16px; color:#2a2618; font-size:0.95rem; line-height:1.6;
+  }
+  .cv-meta{
+    display:flex; gap:16px; flex-wrap:wrap;
+    border-top:1px solid var(--parchment-dim); padding-top:12px;
+  }
+  .meta-item{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    color:#6b6450; text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .cv-download{
+    margin:16px 20px 20px; text-align:center;
+    background:var(--gold); color:var(--navy);
+    border:1px solid var(--gold); padding:12px 20px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cv-download:hover{
+    background:var(--gold-bright); color:var(--navy);
+  }
+
+  /* ===== EXPERTISE ITEMS ===== */
+  .expertise-item{
+    padding:20px; border:1px solid var(--parchment-dim); border-radius:2px;
+    background:rgba(176,140,62,0.04);
+  }
+  .expertise-icon{
+    display:block; font-size:2.5rem; margin-bottom:12px;
+  }
+  .expertise-item h4{
+    font-family:'Spectral', serif; font-weight:600; font-size:1.05rem;
+    color:var(--navy); margin:0 0 8px;
+  }
+  .expertise-item p{
+    margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;
+  }
+
+  /* ===== EXPERIENCE CARDS ===== */
+  .exp-card{
+    border-left:4px solid var(--gold); background:rgba(176,140,62,0.03);
+    padding:24px; margin-bottom:20px; border-radius:2px;
+  }
+  .exp-header{
+    display:flex; justify-content:space-between; gap:20px; margin-bottom:16px;
+    flex-wrap:wrap;
+  }
+  .exp-header h4{
+    font-family:'Spectral', serif; font-weight:600; font-size:1.15rem;
+    color:var(--navy);
+  }
+  .exp-role{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--gold);
+  }
+  .exp-period{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em;
+    color:var(--gold); text-align:right; white-space:nowrap;
+  }
+  .exp-previous{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--gold); display:block; margin-top:16px;
+  }
+
+  /* ===== EDUCATION CARDS ===== */
+  .edu-card{
+    border-left:4px solid var(--gold); background:rgba(176,140,62,0.03);
+    padding:24px; margin-bottom:20px; border-radius:2px;
+  }
+  .edu-header{
+    display:flex; justify-content:space-between; gap:20px; margin-bottom:16px;
+    flex-wrap:wrap;
+  }
+  .edu-header h4{
+    font-family:'Spectral', serif; font-weight:600; font-size:1.15rem;
+    color:var(--navy);
+  }
+  .edu-institution{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--gold);
+  }
+  .edu-period{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em;
+    color:var(--gold); text-align:right; white-space:nowrap;
+  }
+
+  /* ===== RESEARCH CARDS ===== */
+  .research-card{
+    padding:24px; margin-bottom:20px;
+    border-left:4px solid var(--gold); background:rgba(176,140,62,0.03);
+    border-radius:2px;
+    transition: box-shadow 0.2s;
+  }
+  .research-card:hover{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
 </style>
 </head>
 <body>
@@ -329,40 +457,159 @@
 <!-- PAGE 2: ESSENCE -->
 
 
-<!-- PAGE 3: PROFESSIONAL IMPACT -->
+<!-- PAGE 2: CURRICULUM VITAE -->
 <section id="professional" class="page">
   <main>
     <div class="section-head">
       <span class="tag">II.</span>
-      <h2><span data-en="Professional experience" data-es="Experiencia Profesional">Professional experience</span></h2>
+      <h2><span data-en="Curriculum Vitae" data-es="Currículum Vitae">Curriculum Vitae</span></h2>
     </div>
-    <div class="ledger">
-<div class="ledger-entry">
-        <div class="period">Jul 2017 &ndash; Present<span class="loc">Bogot&aacute;, Colombia</span></div>
-        <div>
-          <h3>Banco Davivienda S.A.</h3>
-          <div class="desk"><span data-en="Corporate Credit &mdash; Eight Years, Four Roles" data-es="Cr&eacute;dito Corporativo &mdash; Ocho A&ntilde;os, Cuatro Roles">Corporate Credit &mdash; Eight Years, Four Roles</span></div>
-          <ul>
-            <li><strong>Corporate Credit, Services &amp; Industry (Dec 2023 &ndash; Present):</strong> Leads financial analysis and evaluation of highly complex corporate and commercial credit transactions, specializing in trust accounts, fiduciary arrangements, joint ventures, and consortia. Formulates and defends strategic recommendations before executive credit committees, and directs special projects for the Corporate Credit Vice-Presidency.</li>
-            <li><strong>Infrastructure &amp; Projects Credit (Feb 2021 &ndash; Dec 2023):</strong> Structured financial and risk analyses for infrastructure-sector companies and macro-projects across MSME, SME, Commercial, and Corporate segments. Presented and defended complex financial models across bank departments and vice presidencies.</li>
-            <li><strong>International Subsidiaries Operations (Dec 2018 &ndash; Feb 2021):</strong> Managed operational requests, re-documentation, and capital transfers for international subsidiary clients, with strategic advisory to the commercial sales force.</li>
-            <li><strong>Internship, National Government Banking (Jul 2017 &ndash; Dec 2018):</strong> Supported financial modeling and solution design for corporate clients, with research on government reforms affecting commercial development.</li>
+    
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div style="margin-bottom:40px;">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:30px;">
+        <span data-en="Current Professional Experience" data-es="Experiencia Profesional Actual">Current Professional Experience</span>
+      </h3>
+      
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <h4 style="margin:0 0 4px;">Banco Davivienda S.A.</h4>
+            <span class="exp-role"><span data-en="Corporate Credit – Services & Industry" data-es="Crédito Corporativo – Servicios e Industrial">Corporate Credit – Services & Industry</span></span>
+          </div>
+          <span class="exp-period">
+            <span data-en="Dec 2023 – Present" data-es="Dic 2023 – Presente">Dec 2023 – Present</span><br>
+            <span style="font-size:0.85rem; color:#6b6450;">Bogotá, Colombia</span>
+          </span>
+        </div>
+        <div class="exp-content">
+          <ul style="margin:0; padding-left:20px; font-size:0.95rem; color:#2a2618; line-height:1.7;">
+            <li><span data-en="Lead financial analysis and comprehensive evaluation of highly complex corporate and commercial credit transactions" data-es="Liderar el análisis financiero y la evaluación integral de operaciones de crédito corporativo y empresarial de alta complejidad">Lead financial analysis and comprehensive evaluation of highly complex corporate and commercial credit transactions</span></li>
+            <li><span data-en="Specialize in intricate structures: trust accounts, fiduciary arrangements, joint ventures, and consortia" data-es="Especialización en estructuras complejas: patrimonios autónomos, fideicomisos, uniones temporales y consorcios">Specialize in intricate structures: trust accounts, fiduciary arrangements, joint ventures, and consortia</span></li>
+            <li><span data-en="Formulate and defend strategic business recommendations before executive credit committees" data-es="Formular y defender recomendaciones estratégicas de negocio ante comités de crédito de alta dirección">Formulate and defend strategic business recommendations before executive credit committees</span></li>
+            <li><span data-en="Coordinate workflows for credit approvals within Corporate Banking across strategic economic sectors" data-es="Coordinar flujos de trabajo para la aprobación de créditos dentro de la Banca Corporativa">Coordinate workflows for credit approvals within Corporate Banking across strategic economic sectors</span></li>
+            <li><span data-en="Direct special projects for the Corporate Credit Vice-Presidency focusing on process optimization and analytical database management" data-es="Dirigir proyectos especiales de la Vicepresidencia de Crédito Corporativo enfocados en optimización de procesos">Direct special projects for the Corporate Credit Vice-Presidency focusing on process optimization and analytical database management</span></li>
           </ul>
-          <div class="transactions">
-            <span class="transactions-label"><span data-en="Selected Transactions" data-es="Transacciones Destacadas">Selected Transactions</span></span>
-            <div class="transaction-row">
-              <span class="t-name">Grupo Ajover</span>
-              <span class="t-detail"><span data-en="Loan refinancing requiring a revision of the project's core structure" data-es="Refinanciaci&oacute;n de cr&eacute;dito que requiri&oacute; ajustar la estructura central del proyecto">Loan refinancing requiring a revision of the project's core structure</span></span>
-            </div>
-            <div class="transaction-row">
-              <span class="t-name">Grupo Jamar</span>
-              <span class="t-detail"><span data-en="Loan refinancing through a difficult negotiation with the investment bank" data-es="Refinanciaci&oacute;n de cr&eacute;dito mediante una negociaci&oacute;n dif&iacute;cil con la banca de inversi&oacute;n">Loan refinancing through a difficult negotiation with the investment bank</span></span>
-            </div>
-            <div class="transaction-row">
-              <span class="t-name"><span data-en="Infrastructure Portfolio" data-es="Portafolio de Infraestructura">Infrastructure Portfolio</span></span>
-              <span class="t-detail"><span data-en="Additional facilities for solar farms, roadways, and power substations" data-es="Cr&eacute;ditos adicionales para granjas solares, v&iacute;as y subestaciones el&eacute;ctricas">Additional facilities for solar farms, roadways, and power substations</span></span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;">
+        <span class="exp-previous"><span data-en="8+ years at Banco Davivienda across 4 different roles" data-es="8+ años en Banco Davivienda en 4 roles diferentes">8+ years at Banco Davivienda across 4 different roles</span></span>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div style="margin-bottom:60px;">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:30px; border-top:2px solid var(--ink); padding-top:40px;">
+        <span data-en="Education" data-es="Educación">Education</span>
+      </h3>
+      
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <h4 style="margin:0 0 4px;"><span data-en="Master in Economics" data-es="Maestría en Economía">Master in Economics</span></h4>
+            <span class="edu-institution">Universidad Externado de Colombia</span>
+          </div>
+          <span class="edu-period">
+            <span data-en="Jun 2021 – Apr 2026" data-es="Jun 2021 – Abr 2026">Jun 2021 – Apr 2026</span><br>
+            <span style="font-size:0.85rem; color:#6b6450;">Bogotá, Colombia</span>
+          </span>
+        </div>
+        <div class="edu-content">
+          <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.6;">
+            <span data-en="Focus: Macroeconomic analysis, applied econometrics, statistical modeling, and high-impact economic policy evaluation" data-es="Enfoque: Análisis macroeconómico, econometría aplicada, modelación estadística y evaluación de políticas económicas">Focus: Macroeconomic analysis, applied econometrics, statistical modeling, and high-impact economic policy evaluation</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <h4 style="margin:0 0 4px;"><span data-en="Bachelor's Degree in Industrial Engineering" data-es="Ingeniería Industrial">Bachelor's Degree in Industrial Engineering</span></h4>
+            <span class="edu-institution">Escuela de Ingeniería Julio Garavito</span>
+          </div>
+          <span class="edu-period">
+            <span data-en="Jan 2012 – Dec 2018" data-es="Ene 2012 – Dic 2018">Jan 2012 – Dec 2018</span><br>
+            <span style="font-size:0.85rem; color:#6b6450;">Bogotá, Colombia</span>
+          </span>
+        </div>
+        <div class="edu-content">
+          <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.6;">
+            <span data-en="Focus: Process optimization, operations research, project management, and foundational corporate finance" data-es="Enfoque: Optimización de procesos, investigación de operaciones, gestión de proyectos y finanzas corporativas">Focus: Process optimization, operations research, project management, and foundational corporate finance</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY AREAS OF EXPERTISE -->
+    <div style="margin-bottom:60px; padding-top:40px; border-top:2px solid var(--ink);">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:20px;">
+        <span data-en="Key Areas of Expertise" data-es="Áreas Clave de Expertise">Key Areas of Expertise</span>
+      </h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px;">
+        <div class="expertise-item">
+          <span class="expertise-icon">💼</span>
+          <h4><span data-en="Finance & Credit" data-es="Finanzas y Crédito">Finance & Credit</span></h4>
+          <p><span data-en="Corporate credit analysis, financial modeling, risk assessment" data-es="Análisis de crédito corporativo, modelamiento financiero, evaluación de riesgos">Corporate credit analysis, financial modeling, risk assessment</span></p>
+        </div>
+        <div class="expertise-item">
+          <span class="expertise-icon">📊</span>
+          <h4><span data-en="Economics" data-es="Economía">Economics</span></h4>
+          <p><span data-en="Economic research, quantitative analysis, data interpretation" data-es="Investigación económica, análisis cuantitativo, interpretación de datos">Economic research, quantitative analysis, data interpretation</span></p>
+        </div>
+        <div class="expertise-item">
+          <span class="expertise-icon">⚙️</span>
+          <h4><span data-en="Industrial Engineering" data-es="Ingeniería Industrial">Industrial Engineering</span></h4>
+          <p><span data-en="Process optimization, systems design, operational efficiency" data-es="Optimización de procesos, diseño de sistemas, eficiencia operacional">Process optimization, systems design, operational efficiency</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV DOWNLOAD CARDS -->
+    <div style="margin-top:60px; padding-top:40px; border-top:2px solid var(--ink);">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:20px;">
+        <span data-en="Download My CV" data-es="Descargar Mi CV">Download My CV</span>
+      </h3>
+      
+      <p style="font-size:1rem; color:#2a2618; margin-bottom:30px; line-height:1.6;">
+        <span data-en="My complete professional profile available in both English and Spanish." data-es="Mi perfil profesional completo disponible en inglés y español.">My complete professional profile available in both English and Spanish.</span>
+      </p>
+
+      <div class="cv-cards">
+        <!-- English CV -->
+        <div class="cv-card">
+          <div class="cv-header">
+            <span class="cv-lang">English</span>
+            <span class="cv-year">2026</span>
+          </div>
+          <div class="cv-content">
+            <h3><span data-en="Professional CV" data-es="CV Profesional">Professional CV</span></h3>
+            <p><span data-en="Complete resume with professional experience, education, skills, and credentials." data-es="Resumen completo con experiencia profesional, educación, habilidades y credenciales.">Complete resume with professional experience, education, skills, and credentials.</span></p>
+            <div class="cv-meta">
+              <span class="meta-item"><span data-en="Format" data-es="Formato">Format</span>: PDF</span>
+              <span class="meta-item"><span data-en="Language" data-es="Idioma">Language</span>: English</span>
             </div>
           </div>
+          <a href="CV_2026.pdf" class="cta cv-download" download><span data-en="Download PDF" data-es="Descargar PDF">Download PDF</span> ↓</a>
+        </div>
+
+        <!-- Spanish CV -->
+        <div class="cv-card">
+          <div class="cv-header">
+            <span class="cv-lang">Español</span>
+            <span class="cv-year">2026</span>
+          </div>
+          <div class="cv-content">
+            <h3><span data-en="Professional CV" data-es="Hoja de Vida Profesional">Professional CV</span></h3>
+            <p><span data-en="Complete resume with professional experience, education, skills, and credentials." data-es="Resumen completo con experiencia profesional, educación, habilidades y credenciales.">Complete resume with professional experience, education, skills, and credentials.</span></p>
+            <div class="cv-meta">
+              <span class="meta-item"><span data-en="Format" data-es="Formato">Format</span>: PDF</span>
+              <span class="meta-item"><span data-en="Language" data-es="Idioma">Language</span>: Español</span>
+            </div>
+          </div>
+          <a href="Hoja de vida 2026.pdf" class="cta cv-download" download><span data-en="Download PDF" data-es="Descargar PDF">Download PDF</span> ↓</a>
+        </div>
+      </div>
     </div>
   </main>
 </section>
@@ -370,24 +617,150 @@
   <main>
     <div class="section-head">
       <span class="tag">III.</span>
-      <h2><span data-en="Papers on Economy" data-es="Artículos sobre Economía">Papers on Economy</span></h2>
+      <h2><span data-en="Economic Research & Studies" data-es="Investigación Económica y Estudios">Economic Research & Studies</span></h2>
     </div>
-    <div class="ledger">
-<div class="ledger-entry">
-        <div class="period">Jun 2021 &ndash; Apr 2026<span class="loc">Bogot&aacute;, Colombia</span></div>
+
+    <p style="font-size:1.05rem; color:#2a2618; margin-bottom:40px; line-height:1.6;">
+      <span data-en="Focused research on financial inclusion, economic stability, and Latin American markets. Current and completed studies examining the intersection of finance and development." data-es="Investigación enfocada en inclusión financiera, estabilidad económica y mercados latinoamericanos. Estudios actuales y completados examinando la intersección de finanzas y desarrollo.">Focused research on financial inclusion, economic stability, and Latin American markets. Current and completed studies examining the intersection of finance and development.</span>
+    </p>
+
+    <!-- MAIN THESIS -->
+    <div style="margin-bottom:60px; padding:30px; background:rgba(12,29,46,0.04); border-left:4px solid var(--gold); border-radius:2px;">
+      <div style="display:flex; justify-content:space-between; align-items:start; gap:20px; margin-bottom:24px; flex-wrap:wrap;">
         <div>
-          <h3>Universidad Externado de Colombia</h3>
-          <div class="desk"><span data-en="Master in Economics &mdash; Thesis Research" data-es="Maestr&iacute;a en Econom&iacute;a &mdash; Investigaci&oacute;n de Tesis">Master in Economics &mdash; Thesis Research</span></div>
-          <ul>
-            <li><strong>Thesis: "La relaci&oacute;n no lineal entre la inclusi&oacute;n financiera y la estabilidad financiera"</strong> &mdash; an empirical study across 17 Latin American countries (2000&ndash;2020), examining how expanding access to financial services interacts with banking-system stability.</li>
-            <li>Built a Financial Stability Index via Principal Component Analysis and applied fixed-effects panel models, quantile regressions, and semiparametric estimation to test for non-linear effects.</li>
-            <li>Found that the relationship follows a "U" shape: financial inclusion initially weakens stability through higher credit risk and information asymmetries, with stabilizing effects only emerging after a critical threshold &mdash; a threshold most of the region has yet to reach.</li>
-            <li>Director: Jacobo Campo Robledo, Faculty of Economics.</li>
-          </ul>
-          <div style="margin-top:16px;">
-            <a class="cta secondary" style="border-color:var(--gold); color:var(--navy); background:var(--parchment);" href="thesis.pdf" target="_blank" rel="noopener"><span data-en="Download Full Thesis (PDF)" data-es="Descargar Tesis Completa (PDF)">Download Full Thesis (PDF)</span></a>
+          <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;">Master's Thesis (2021–2026)</span>
+          <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.25rem; color:var(--navy); margin:0;">
+            <span data-en="The Non-linear Relationship Between Financial Inclusion and Financial Stability" data-es="La relación no lineal entre la inclusión financiera y la estabilidad financiera">The Non-linear Relationship Between Financial Inclusion and Financial Stability</span>
+          </h3>
+          <p style="margin:8px 0 0; font-size:0.95rem; color:#6b6450; font-style:italic;">
+            <span data-en="Empirical evidence for 17 Latin American countries (2000–2020)" data-es="Evidencia empírica para 17 países de América Latina (2000–2020)">Empirical evidence for 17 Latin American countries (2000–2020)</span>
+          </p>
+        </div>
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold); white-space:nowrap; padding-top:4px;">Universidad Externado de Colombia</span>
+      </div>
+
+      <!-- ABSTRACT -->
+      <div style="margin-bottom:30px; padding-bottom:30px; border-bottom:1px solid rgba(138,127,100,0.3);">
+        <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0 0 12px;">
+          <span data-en="Summary & Abstract" data-es="Resumen y Abstracto">Summary & Abstract</span>
+        </h4>
+        <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.7;">
+          <span data-en="This research examines the interaction between financial inclusion and financial stability across 17 Latin American countries from 2000–2020. Using a Financial Stability Index constructed via Principal Component Analysis and employing fixed-effects panel models, quantile regressions, and semiparametric estimation, the study reveals a **non-linear, U-shaped relationship** rather than a simple linear one." data-es="Esta investigación examina la interacción entre inclusión financiera y estabilidad financiera en 17 países de América Latina desde 2000–2020. Utilizando un Índice de Estabilidad Financiera construido mediante Análisis de Componentes Principales y empleando modelos de panel de efectos fijos, regresiones cuantílicas y estimación semiparamétrica, el estudio revela una **relación no lineal en forma de U** en lugar de una relación lineal simple.">This research examines the interaction between financial inclusion and financial stability across 17 Latin American countries from 2000–2020. Using a Financial Stability Index constructed via Principal Component Analysis and employing fixed-effects panel models, quantile regressions, and semiparametric estimation, the study reveals a **non-linear, U-shaped relationship** rather than a simple linear one.</span>
+        </p>
+      </div>
+
+      <!-- KEY FINDINGS -->
+      <div style="margin-bottom:24px;">
+        <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0 0 16px;">
+          <span data-en="Key Findings" data-es="Hallazgos Principales">Key Findings</span>
+        </h4>
+        <ul style="margin:0; padding-left:20px; color:#2a2618; font-size:0.95rem; line-height:1.8;">
+          <li><strong><span data-en="U-Shaped Curve" data-es="Curva en forma de U">U-Shaped Curve</span>:</strong> <span data-en="At low inclusion levels, expanded financial access initially weakens stability through higher credit risk, operational costs, and information asymmetries. Stabilizing effects only emerge after crossing a critical threshold." data-es="En niveles bajos de inclusión, el acceso financiero expandido debilita inicialmente la estabilidad a través de mayor riesgo crediticio, costos operacionales y asimetrías de información. Los efectos estabilizadores solo emergen después de cruzar un umbral crítico.">At low inclusion levels, expanded financial access initially weakens stability through higher credit risk, operational costs, and information asymmetries. Stabilizing effects only emerge after crossing a critical threshold.</span></li>
+          <li><strong><span data-en="Critical Threshold: FI* ≈ 0.57–0.60" data-es="Umbral Crítico: FI* ≈ 0.57–0.60">Critical Threshold: FI* ≈ 0.57–0.60</span></strong> – <span data-en="This is the inflection point where negative effects transition to positive. Latin America's current average (0.338) remains significantly below this threshold." data-es="Este es el punto de inflexión donde los efectos negativos transicionan a positivos. El promedio actual de América Latina (0.338) permanece significativamente por debajo de este umbral.">This is the inflection point where negative effects transition to positive. Latin America's current average (0.338) remains significantly below this threshold.</span></li>
+          <li><strong><span data-en="Heterogeneous Effects" data-es="Efectos Heterogéneos">Heterogeneous Effects</span>:</strong> <span data-en="More financially stable countries show stronger negative impacts from inclusion in the ascending phase, suggesting that robust systems are more sensitive to stability costs." data-es="Los países financieramente más estables muestran impactos negativos más fuertes de la inclusión en la fase ascendente, sugiriendo que los sistemas robustos son más sensibles a los costos de estabilidad.">More financially stable countries show stronger negative impacts from inclusion in the ascending phase, suggesting that robust systems are more sensitive to stability costs.</span></li>
+          <li><strong><span data-en="Banking Concentration Effect" data-es="Efecto de Concentración Bancaria">Banking Concentration Effect</span>:</strong> <span data-en="Bank concentration acts as a buffer, absorbing initial costs of financial inclusion through franchise value mechanisms (Keeley theory)." data-es="La concentración bancaria actúa como un amortiguador, absorbiendo los costos iniciales de la inclusión financiera a través de mecanismos de valor de franquicia (teoría de Keeley).">Bank concentration acts as a buffer, absorbing initial costs of financial inclusion through franchise value mechanisms (Keeley theory).</span></li>
+          <li><strong><span data-en="Policy Implication" data-es="Implicación de Política">Policy Implication</span>:</strong> <span data-en="One-size-fits-all inclusion policies are insufficient. More stable countries require caution against accelerated access expansion without complementary regulatory improvements." data-es="Las políticas de inclusión única no son suficientes. Los países más estables requieren cautela contra la expansión acelerada del acceso sin mejoras regulatorias complementarias.">One-size-fits-all inclusion policies are insufficient. More stable countries require caution against accelerated access expansion without complementary regulatory improvements.</span></li>
+        </ul>
+      </div>
+
+      <!-- METHODOLOGY BRIEFING -->
+      <div>
+        <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0 0 16px;">
+          <span data-en="Methodology Briefing" data-es="Resumen de Metodología">Methodology Briefing</span>
+        </h4>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px;">
+          <div style="padding:16px; background:rgba(176,140,62,0.05); border-radius:2px; border-left:2px solid var(--gold);">
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;"><span data-en="Sample" data-es="Muestra">Sample</span></span>
+            <p style="margin:0; font-size:0.9rem; color:#2a2618;">17 Latin American countries<br>21 years (2000–2020)<br>357 observations</p>
+          </div>
+          <div style="padding:16px; background:rgba(176,140,62,0.05); border-radius:2px; border-left:2px solid var(--gold);">
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;"><span data-en="Methods" data-es="Métodos">Methods</span></span>
+            <p style="margin:0; font-size:0.9rem; color:#2a2618;">Fixed-effects panels<br>Quantile regression<br>Semiparametric estimation</p>
+          </div>
+          <div style="padding:16px; background:rgba(176,140,62,0.05); border-radius:2px; border-left:2px solid var(--gold);">
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;"><span data-en="Index" data-es="Índice">Index</span></span>
+            <p style="margin:0; font-size:0.9rem; color:#2a2618;">Financial Stability Index (FSI)<br>via PCA with 6 indicators<br>Capital, credit risk, liquidity</p>
           </div>
         </div>
+      </div>
+
+      <div style="margin-top:24px;">
+        <a href="Inclusion_Estabilidad_Financiera_LatAm_Summary.pdf" class="cta" style="display:inline-block; background:var(--gold); color:var(--navy); border:1px solid var(--gold);" download>
+          <span data-en="Download Full Research Summary (PDF)" data-es="Descargar Resumen Completo (PDF)">Download Full Research Summary (PDF)</span> ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- ONGOING & UPCOMING RESEARCH -->
+    <div style="margin-top:60px; padding-top:40px; border-top:2px solid var(--ink);">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:30px;">
+        <span data-en="Ongoing & Upcoming Research" data-es="Investigación Actual y Próxima">Ongoing & Upcoming Research</span>
+      </h3>
+
+      <div class="research-card">
+        <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:12px; flex-wrap:wrap;">
+          <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0;">
+            <span data-en="Financial Inclusion Dynamics in Post-Pandemic Markets" data-es="Dinámica de Inclusión Financiera en Mercados Post-Pandemia">Financial Inclusion Dynamics in Post-Pandemic Markets</span>
+          </h4>
+          <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#7a7359;">In Progress</span>
+        </div>
+        <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.6;">
+          <span data-en="Extending the U-shaped framework to examine how pandemic-driven financial inclusion measures impact stability in emerging Latin American economies. Focus on digital banking expansion and regulatory adaptation." data-es="Extender el marco en forma de U para examinar cómo las medidas de inclusión financiera impulsadas por la pandemia impactan la estabilidad en economías latinoamericanas emergentes. Enfoque en la expansión de la banca digital y adaptación regulatoria.">Extending the U-shaped framework to examine how pandemic-driven financial inclusion measures impact stability in emerging Latin American economies. Focus on digital banking expansion and regulatory adaptation.</span>
+        </p>
+      </div>
+
+      <div class="research-card">
+        <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:12px; flex-wrap:wrap;">
+          <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0;">
+            <span data-en="Credit Risk Transmission in Regional Financial Networks" data-es="Transmisión de Riesgo Crediticio en Redes Financieras Regionales">Credit Risk Transmission in Regional Financial Networks</span>
+          </h4>
+          <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#7a7359;">Planned</span>
+        </div>
+        <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.6;">
+          <span data-en="Investigating how credit risk originating from expansion of microfinance and alternative lending propagates through regional banking systems. Network analysis approach combining macroeconomic stress testing." data-es="Investigar cómo el riesgo crediticio originado en la expansión de microfinanzas y préstamos alternativos se propaga a través de sistemas bancarios regionales. Enfoque de análisis de redes combinando pruebas de estrés macroeconómico.">Investigating how credit risk originating from expansion of microfinance and alternative lending propagates through regional banking systems. Network analysis approach combining macroeconomic stress testing.</span>
+        </p>
+      </div>
+
+      <div class="research-card">
+        <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:12px; flex-wrap:wrap;">
+          <h4 style="font-family:'Spectral', serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin:0;">
+            <span data-en="Comments on Active Debates" data-es="Comentarios sobre Debates Activos">Comments on Active Debates</span>
+          </h4>
+          <span style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#7a7359;">Ongoing</span>
+        </div>
+        <p style="margin:0; color:#2a2618; font-size:0.95rem; line-height:1.6;">
+          <span data-en="Periodic analysis and commentary on current debates in financial regulation, central banking policy, and macroeconomic stability in Latin America and emerging markets." data-es="Análisis periódico y comentario sobre debates actuales en regulación financiera, política de bancos centrales y estabilidad macroeconómica en América Latina y mercados emergentes.">Periodic analysis and commentary on current debates in financial regulation, central banking policy, and macroeconomic stability in Latin America and emerging markets.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- RESEARCH INTERESTS -->
+    <div style="margin-top:60px; padding-top:40px; border-top:2px solid var(--ink);">
+      <h3 style="font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy); margin-bottom:20px;">
+        <span data-en="Research Interests" data-es="Intereses de Investigación">Research Interests</span>
+      </h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+        <div style="padding:16px; border:1px solid var(--parchment-dim); border-radius:2px; background:rgba(241,234,217,0.5);">
+          <h5 style="font-family:'Spectral', serif; font-size:1rem; color:var(--navy); margin:0 0 8px;"><span data-en="Financial Inclusion" data-es="Inclusión Financiera">Financial Inclusion</span></h5>
+          <p style="margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;"><span data-en="Access to financial services, digital banking, microfinance" data-es="Acceso a servicios financieros, banca digital, microfinanzas">Access to financial services, digital banking, microfinance</span></p>
+        </div>
+        <div style="padding:16px; border:1px solid var(--parchment-dim); border-radius:2px; background:rgba(241,234,217,0.5);">
+          <h5 style="font-family:'Spectral', serif; font-size:1rem; color:var(--navy); margin:0 0 8px;"><span data-en="Financial Stability" data-es="Estabilidad Financiera">Financial Stability</span></h5>
+          <p style="margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;"><span data-en="Banking crises, systemic risk, regulatory frameworks" data-es="Crisis bancarias, riesgo sistémico, marcos regulatorios">Banking crises, systemic risk, regulatory frameworks</span></p>
+        </div>
+        <div style="padding:16px; border:1px solid var(--parchment-dim); border-radius:2px; background:rgba(241,234,217,0.5);">
+          <h5 style="font-family:'Spectral', serif; font-size:1rem; color:var(--navy); margin:0 0 8px;"><span data-en="Latin American Economics" data-es="Economía Latinoamericana">Latin American Economics</span></h5>
+          <p style="margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;"><span data-en="Development policy, emerging markets, policy analysis" data-es="Política de desarrollo, mercados emergentes, análisis de política">Development policy, emerging markets, policy analysis</span></p>
+        </div>
+        <div style="padding:16px; border:1px solid var(--parchment-dim); border-radius:2px; background:rgba(241,234,217,0.5);">
+          <h5 style="font-family:'Spectral', serif; font-size:1rem; color:var(--navy); margin:0 0 8px;"><span data-en="Quantitative Methods" data-es="Métodos Cuantitativos">Quantitative Methods</span></h5>
+          <p style="margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;"><span data-en="Econometrics, panel data, machine learning applications" data-es="Econometría, datos de panel, aplicaciones de aprendizaje automático">Econometrics, panel data, machine learning applications</span></p>
+        </div>
+        <div style="padding:16px; border:1px solid var(--parchment-dim); border-radius:2px; background:rgba(241,234,217,0.5);">
+          <h5 style="font-family:'Spectral', serif; font-size:1rem; color:var(--navy); margin:0 0 8px;"><span data-en="Credit Risk" data-es="Riesgo de Crédito">Credit Risk</span></h5>
+          <p style="margin:0; font-size:0.9rem; color:#2a2618; line-height:1.5;"><span data-en="Credit allocation, default models, risk assessment" data-es="Asignación de crédito, modelos de incumplimiento, evaluación de riesgos">Credit allocation, default models, risk assessment</span></p>
+        </div>
+      </div>
     </div>
   </main>
 </section>
