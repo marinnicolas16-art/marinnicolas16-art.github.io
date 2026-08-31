@@ -8,58 +8,65 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0c1d2e;
-    --navy-deep:#081420;
-    --parchment:#f1ead9;
-    --parchment-dim:#e7decb;
-    --gold:#b08c3e;
-    --gold-bright:#cda64f;
-    --ink:#1a1812;
-    --rule:#8a7f64;
+    --navy:#171a1d;
+    --navy-deep:#0f1215;
+    --parchment:#f6f1e8;
+    --parchment-dim:#e9e0cf;
+    --paper:#fbf7f1;
+    --paper-strong:#efe5d4;
+    --gold:#7a6847;
+    --gold-bright:#9a8661;
+    --ink:#191814;
+    --muted:#615a52;
+    --rule:#c8b79d;
+    --panel:#f1e8d8;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--parchment);
+    background:linear-gradient(180deg, #f3efe7 0%, #f8f4ef 100%);
     color:var(--ink);
-    font-family:'Libre Baskerville', serif;
+    font-family:'Georgia', 'Times New Roman', serif;
     line-height:1.6;
+    letter-spacing:0.01em;
   }
   @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
 
   /* ---- NAV ---- */
   nav.topnav{
     position:sticky; top:0; z-index:50;
-    background:var(--navy);
-    border-bottom:3px double var(--gold);
+    background:#1a1d20;
+    border-bottom:1px solid var(--gold);
     display:flex;
     justify-content:center;
     gap:2px;
     padding:0 12px;
     overflow-x:auto;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
   }
   nav.topnav button{
     background:none; border:none;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.12em;
+    font-family:'"Helvetica Neue"', Arial, sans-serif;
+    font-size:10.5px;
+    letter-spacing:0.14em;
     text-transform:uppercase;
-    color:var(--parchment-dim);
+    color:#ebe4d8;
     padding:18px 20px;
     cursor:pointer;
-    border-bottom:3px solid transparent;
+    border-bottom:2px solid transparent;
     white-space:nowrap;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
-  nav.topnav button:hover{ color:var(--gold-bright); }
-  nav.topnav button.active{ color:var(--gold-bright); border-bottom-color:var(--gold); }
+  nav.topnav button:hover{ color:#f4d9a2; }
+  nav.topnav button.active{ color:#f5d28a; border-bottom-color:var(--gold-bright); background:rgba(255,255,255,0.02); }
   .lang-btn{
-    margin-left:8px; border:1px solid var(--gold) !important;
-    border-radius:2px; color:var(--gold-bright) !important;
+    margin-left:8px; border:1px solid rgba(245,210,138,0.8) !important;
+    border-radius:2px; color:#f5d28a !important;
     padding:8px 12px !important; align-self:center;
+    background:rgba(255,255,255,0.01);
   }
-  .lang-btn:hover{ background:rgba(176,140,62,0.15); }
+  .lang-btn:hover{ background:rgba(245,210,138,0.08); }
 
   .page{ display:none; animation: fadeIn 0.5s ease; }
   .page.active{ display:block; }
@@ -74,12 +81,14 @@
     padding-bottom:10px;
   }
   .section-head .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px;
-    letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; white-space:nowrap;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:10.5px;
+    letter-spacing:0.16em; color:var(--gold); text-transform:uppercase; white-space:nowrap;
+    font-weight:600;
   }
   .section-head h2{
-    font-family:'Spectral', serif; font-weight:600; font-style:italic;
-    font-size:1.9rem; margin:0; color:var(--navy);
+    font-family:'Georgia', 'Times New Roman', serif; font-weight:700;
+    font-size:2rem; margin:0; color:var(--ink);
+    letter-spacing:-0.02em;
   }
 
   /* ===== PAGE 1: SUMMARY ===== */
@@ -100,16 +109,16 @@
     border:4px solid var(--parchment);
   }
   .summary-id .eyebrow{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.3em;
-    text-transform:uppercase; color:var(--gold); margin-bottom:14px;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:10.5px; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:14px; font-weight:600;
   }
   .summary-id h1{
-    font-family:'Spectral', serif; font-weight:600; font-size:clamp(2rem,5vw,3rem);
-    margin:0 0 8px; color:var(--navy);
+    font-family:'Georgia', 'Times New Roman', serif; font-weight:700; font-size:clamp(2rem,5vw,3rem);
+    margin:0 0 8px; color:var(--ink); letter-spacing:-0.03em;
   }
   .summary-id .age{
-    font-family:'IBM Plex Mono', monospace; font-size:13px; color:#5c5642;
-    letter-spacing:0.05em; text-transform:uppercase;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:12px; color:var(--muted);
+    letter-spacing:0.12em; text-transform:uppercase; font-weight:600;
   }
   .quote-block{
     margin-top:54px;
@@ -117,17 +126,17 @@
     padding:6px 0 6px 28px;
   }
   .quote-block p{
-    font-family:'Spectral', serif; font-style:italic; font-size:1.5rem;
-    color:var(--navy); margin:0 0 10px; line-height:1.45;
+    font-family:'Georgia', 'Times New Roman', serif; font-style:italic; font-size:1.45rem;
+    color:var(--ink); margin:0 0 10px; line-height:1.45;
   }
   .quote-block span{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em;
-    text-transform:uppercase; color:#7a7359;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:11px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--muted);
   }
   .location-stamp{
     margin-top:50px; display:flex; gap:18px; flex-wrap:wrap;
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:#6b6450;
-    text-transform:uppercase; letter-spacing:0.06em;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:11px; color:var(--muted);
+    text-transform:uppercase; letter-spacing:0.1em;
   }
   .location-stamp span{ border:1px solid var(--rule); padding:6px 12px; }
 
@@ -141,11 +150,11 @@
   }
   .essence-card:last-child{ border-right:none; }
   .essence-card .label{
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:block;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:10.5px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:block; font-weight:600;
   }
   .essence-card h3{
-    font-family:'Spectral', serif; font-weight:600; font-size:1.2rem; margin:0 0 10px; color:var(--navy);
+    font-family:'Georgia', 'Times New Roman', serif; font-weight:700; font-size:1.2rem; margin:0 0 10px; color:var(--ink);
   }
   .essence-card p, .essence-card ul{ margin:0; font-size:0.96rem; color:#2a2618; padding-left:0; list-style:none; }
   .essence-card ul li{ padding:4px 0; border-bottom:1px dotted var(--rule); }
@@ -156,8 +165,8 @@
     margin-bottom:60px;
   }
   .gallery-head{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.15em;
-    text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:block;
+    font-family:'"Helvetica Neue"', Arial, sans-serif; font-size:10.5px; letter-spacing:0.15em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:20px; display:block; font-weight:600;
     border-top:1px solid var(--rule); padding-top:30px;
   }
   .gallery{
@@ -224,6 +233,61 @@
   .credential .label{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#5c5642; }
   @media (max-width:560px){ .ledger-entry{ grid-template-columns:1fr; gap:6px; } }
 
+  /* ===== PAGE 3: REVIEWS ON THE STOCK MARKET ===== */
+  .review-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-top:30px;
+  }
+  .review-card{
+    background:rgba(12,29,46,0.03); border:1px solid var(--rule); border-left:4px solid var(--gold);
+    padding:24px; display:flex; flex-direction:column; gap:16px; min-height:100%;
+  }
+  .review-card.is-locked{
+    opacity:0.9; background:rgba(176,140,62,0.03);
+  }
+  .review-header{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;
+  }
+  .review-symbol{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold); display:block; margin-bottom:8px;
+  }
+  .review-card h3{
+    margin:0; font-family:'Spectral', serif; font-weight:600; font-size:1.35rem; color:var(--navy);
+  }
+  .review-badge{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase;
+    border:1px solid var(--gold); color:var(--gold); padding:6px 10px; white-space:nowrap;
+  }
+  .review-card p{
+    margin:0; font-size:0.96rem; color:#2a2618; line-height:1.7;
+  }
+  .review-metrics{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .review-metrics span{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.04em; text-transform:uppercase;
+    padding:6px 8px; border:1px solid rgba(138,127,100,0.5); color:#4a4333; background:rgba(255,255,255,0.18);
+  }
+  .review-actions{
+    margin-top:auto; display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .review-card .cta,
+  .review-card .cta.secondary{
+    display:inline-block; font-size:11px; padding:12px 18px;
+  }
+  .review-notes{
+    margin-top:48px; padding-top:26px; border-top:2px solid var(--ink);
+  }
+  .review-notes h3{
+    margin:0 0 16px; font-family:'Spectral', serif; font-weight:600; font-size:1.3rem; color:var(--navy);
+  }
+  .review-notes ul{
+    list-style:none; padding:0; margin:0; display:grid; gap:12px;
+  }
+  .review-notes li{
+    border-left:3px solid var(--gold); padding:10px 0 10px 16px; color:#2a2618; font-size:0.96rem; line-height:1.7;
+  }
+
   /* ===== PAGE 4: PURPOSE ===== */
   .purpose-wrap{
     background:var(--navy); color:var(--parchment); border-radius:2px; padding:52px 40px; position:relative; overflow:hidden;
@@ -285,8 +349,8 @@
   }
 
   footer{
-    text-align:center; padding:36px 24px 50px; font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:#7a7359;
+    text-align:center; padding:36px 24px 50px; font-family:'"Helvetica Neue"', Arial, sans-serif;
+    font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);
   }
 
   /* ===== PAGE 2: CV CARDS ===== */
@@ -423,7 +487,8 @@
 <nav class="topnav">
   <button data-target="summary" class="active"><span data-en="I. Summary" data-es="I. Resumen">I. Summary</span></button>
   <button data-target="professional"><span data-en="II. Professional experience" data-es="II. Experiencia Profesional">II. Professional experience</span></button>
-  <button data-target="papers"><span data-en="III. Papers on Economy" data-es="III. Artículos sobre Economía">III. Papers on Economy</span></button>
+  <button data-target="reviews"><span data-en="III. Reviews on the Stock Market" data-es="III. Reseñas sobre el Mercado de Valores">III. Reviews on the Stock Market</span></button>
+  <button data-target="papers"><span data-en="IV. Papers on Economy" data-es="IV. Artículos sobre Economía">IV. Papers on Economy</span></button>
   <button id="langToggle" class="lang-btn">ES</button>
 </nav>
 
@@ -437,7 +502,7 @@
       <div class="summary-id">
         <div class="eyebrow"><span data-en="Personal Record &middot; Bogot&aacute;, Colombia" data-es="Registro Personal &middot; Bogot&aacute;, Colombia">Personal Record &middot; Bogot&aacute;, Colombia</span></div>
         <h1>Nicholas Marin Avila</h1>
-        <div class="age"><span data-en="Age 31" data-es="Edad 31">Age 31</span></div>
+        <div class="age"><span data-en="Age 32" data-es="Edad 32">Age 32</span></div>
       </div>
     </div>
 
@@ -613,10 +678,82 @@
     </div>
   </main>
 </section>
-<section id="papers" class="page">
+<section id="reviews" class="page">
   <main>
     <div class="section-head">
       <span class="tag">III.</span>
+      <h2><span data-en="Reviews on the Stock Market" data-es="Reseñas sobre el Mercado de Valores">Reviews on the Stock Market</span></h2>
+    </div>
+
+    <p style="font-size:1.05rem; color:#2a2618; margin-bottom:20px; line-height:1.7;">
+      <span data-en="Equity reviews and company notes that combine financial analysis, valuation logic, and investment context. This section is designed to grow over time with new public-company analyses using the same structure and format." data-es="Reseñas de acciones y notas de empresas que combinan análisis financiero, lógica de valoración y contexto de inversión. Esta sección está diseñada para crecer con el tiempo con nuevos análisis de compañías cotizadas usando la misma estructura y formato.">Equity reviews and company notes that combine financial analysis, valuation logic, and investment context. This section is designed to grow over time with new public-company analyses using the same structure and format.</span>
+    </p>
+
+    <div class="review-grid">
+      <article class="review-card">
+        <div class="review-header">
+          <div>
+            <span class="review-symbol">ECOPETROL</span>
+            <h3>Ecopetrol S.A.</h3>
+          </div>
+          <span class="review-badge"><span data-en="Published" data-es="Publicado">Published</span></span>
+        </div>
+
+        <p>
+          <span data-en="Equity review covering the company’s operating structure, macro context, key risks, and long-term investment thesis in the Colombian energy sector." data-es="Reseña de acciones que cubre la estructura operativa de la compañía, el contexto macroeconómico, los principales riesgos y la tesis de inversión a largo plazo en el sector energético colombiano.">Equity review covering the company’s operating structure, macro context, key risks, and long-term investment thesis in the Colombian energy sector.</span>
+        </p>
+
+        <div class="review-metrics">
+          <span>Energy</span>
+          <span>Colombia</span>
+          <span>Public Company</span>
+        </div>
+
+        <div class="review-actions">
+          <a href="ecopetrol.pdf" class="cta" target="_blank" rel="noopener"><span data-en="Open PDF" data-es="Abrir PDF">Open PDF</span></a>
+          <a href="ecopetrol.pdf" class="cta secondary" download><span data-en="Download" data-es="Descargar">Download</span></a>
+        </div>
+      </article>
+
+      <article class="review-card is-locked">
+        <div class="review-header">
+          <div>
+            <span class="review-symbol">COMING SOON</span>
+            <h3><span data-en="New company review" data-es="Nueva reseña de empresa">New company review</span></h3>
+          </div>
+          <span class="review-badge"><span data-en="Pending" data-es="Pendiente">Pending</span></span>
+        </div>
+
+        <p>
+          <span data-en="Future reviews will follow the same structure used in the Ecopetrol analysis: business context, valuation drivers, downside and upside scenarios, and a clear investment conclusion." data-es="Las futuras reseñas seguirán la misma estructura utilizada en el análisis de Ecopetrol: contexto del negocio, factores de valoración, escenarios de riesgo y potencial, y una conclusión clara de inversión.">Future reviews will follow the same structure used in the Ecopetrol analysis: business context, valuation drivers, downside and upside scenarios, and a clear investment conclusion.</span>
+        </p>
+
+        <div class="review-metrics">
+          <span>Coming soon</span>
+          <span>Format ready</span>
+        </div>
+
+        <div class="review-actions">
+          <button class="cta secondary" type="button" style="cursor:default; opacity:0.8;">Coming soon</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="review-notes">
+      <h3><span data-en="Review structure" data-es="Estructura de reseña">Review structure</span></h3>
+      <ul>
+        <li><span data-en="Business overview and sector context" data-es="Resumen del negocio y contexto sectorial">Business overview and sector context</span></li>
+        <li><span data-en="Financial performance and valuation drivers" data-es="Desempeño financiero y factores de valoración">Financial performance and valuation drivers</span></li>
+        <li><span data-en="Main risks, scenarios, and investment conclusion" data-es="Principales riesgos, escenarios y conclusión de inversión">Main risks, scenarios, and investment conclusion</span></li>
+      </ul>
+    </div>
+  </main>
+</section>
+
+<section id="papers" class="page">
+  <main>
+    <div class="section-head">
+      <span class="tag">IV.</span>
       <h2><span data-en="Economic Research & Studies" data-es="Investigación Económica y Estudios">Economic Research & Studies</span></h2>
     </div>
 
